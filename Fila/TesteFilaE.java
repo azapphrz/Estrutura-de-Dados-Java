@@ -10,8 +10,11 @@ public class TesteFilaE {
 		
 		filaE = new FilaEstatica(9); // Construtor da Pilha estatica
 		
-		System.out.println( "Frente da Fila: " + filaE.consultarInicio() );
-		System.out.println( "A Fila esta vazia? " + filaE.vazia() );
+		System.out.println("Frente da Fila: " + filaE.consultarInicio());
+		
+		
+		System.out.println("A Fila esta vazia? " + filaE.vazia());
+		
 		filaE.enfileirar( "a1" );
 		filaE.enfileirar( "g1" );
 		filaE.enfileirar( "t1" );
@@ -20,13 +23,22 @@ public class TesteFilaE {
 		filaE.enfileirar( "g2" );  
 		filaE.enfileirar( "t2" );
 		filaE.enfileirar( "t3" );
-		System.out.println( "Frente da Fila: " + filaE.consultarInicio() );
+		
+		System.out.println("Frente da Fila: " + filaE.consultarInicio());
+		
 		System.out.println("A Fila est� cheia? "+ filaE.cheia());
-		System.out.println( "Conteúdo da Fila:" + filaE.toString() );
-		System.out.println( "Tamanho da Fila: " + filaE.tamanho() );
+		
+		System.out.println("Conteudo da Fila:" + filaE.toString());
+		
+		System.out.println("Tamanho da Fila: " + filaE.tamanho());
+		
 		System.out.println("Exite o item na Fila? " + filaE.buscar(1.322));
+		
+		filaE.limpar();
+		
+		System.out.println("A Fila esta vazia? " + filaE.vazia());
 		/*filaE.desenfileirar();
-		System.out.println( "Conteúdo da Fila:" + filaE.toString() );
+		System.out.println( "Conteudo da Fila:" + filaE.toString() );
 		System.out.println( "Tamanho da Fila: " + filaE.tamanho() );
 		*/
 	}

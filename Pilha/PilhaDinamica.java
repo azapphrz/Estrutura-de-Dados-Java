@@ -1,26 +1,26 @@
 package Pilha;
 
-public class pilhaDinamica {
-
-	private class Celula{
-		Object item; // Armazena o item/elemento/objeto
-		Celula anterior; // Referencia para o objeto anterior
-		
-		public Celula(){
-			item = null;
-			anterior = null;
-		}
-		
-		public Celula( Object valorItem ){
-			item = valorItem;
-			anterior = null;
-		}
-		
- 		public Celula( Object valorItem, Celula celulaAnterior ){
-			item = valorItem;
-			anterior = celulaAnterior;
-		}
+class Celula{
+	Object item; // Armazena o item/elemento/objeto
+	Celula anterior; // Referencia para o objeto anterior
+	
+	public Celula(){
+		item = null;
+		anterior = null;
 	}
+	
+	public Celula( Object valorItem ){
+		item = valorItem;
+		anterior = null;
+	}
+	
+	public Celula( Object valorItem, Celula celulaAnterior ){
+		item = valorItem;
+		anterior = celulaAnterior;
+	}
+}
+
+public class PilhaDinamica {
 	
 	private Celula topo; // Referencia para o topo da pilha
 	private int contador; // Contador do numero de itens na pilha
@@ -69,8 +69,8 @@ public class pilhaDinamica {
 	}
 	
 	public Object clonar(){
-		pilhaDinamica tempPilha = new pilhaDinamica();
-		pilhaDinamica copiaPilha = new pilhaDinamica();
+		PilhaDinamica tempPilha = new PilhaDinamica();
+		PilhaDinamica copiaPilha = new PilhaDinamica();
 		while( !vazia() ){
 			tempPilha.empilhar( desempilhar() );
 		}
@@ -86,7 +86,7 @@ public class pilhaDinamica {
 		if( vazia() ){
 			pilhaCheia = null;
 		}else{
-			pilhaDinamica copiaPilha = (pilhaDinamica) clonar();
+			PilhaDinamica copiaPilha = (PilhaDinamica) clonar();
 			while( !copiaPilha.vazia() ){
 					pilhaCheia += "\n" + copiaPilha.desempilhar();
 			}

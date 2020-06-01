@@ -4,14 +4,14 @@ import java.util.*;
 
 public class Ordenacao{
 
-    // Gerar uma sequência de dados aleatorios
+    // Gerar uma sequencia de dados aleatorios
     public  int [] geradorAleatorio (int qtde, int intervalo){
         Random gerador = new Random();
         int [] numeros = gerador.ints(0, intervalo).limit(qtde).toArray();
         return (numeros);
     }
 
-    // Exibe o vetor passado como pârametro
+    // Exibe o vetor passado como parametro
     public String exibirVetor (int[] vet) {
         String strVet = "";
         for (int i = 0; i < vet.length; i++){

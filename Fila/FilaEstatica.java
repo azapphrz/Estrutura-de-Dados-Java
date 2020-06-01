@@ -90,9 +90,15 @@ public class FilaEstatica{
 		}
 		return( filaCompleta );
 	}
-
+	
 	public boolean buscar(Object item) {
 		String busca = item.toString();
 		return (toString().contains(busca));
+	}
+	
+	public void limpar() {
+		for (int i = 0; i <= tamanho()+6; i++) {
+			itemArray[i] = desenfileirar();
+		}
 	}
 }

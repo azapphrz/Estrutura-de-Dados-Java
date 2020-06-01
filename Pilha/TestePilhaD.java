@@ -1,12 +1,12 @@
 package Pilha;
 
-public class testePilhaD {
+public class TestePilhaD {
 	
-	private static pilhaDinamica pilhaD; // Instacia a classe PilhaDinamica
+	private static PilhaDinamica pilhaD; // Instacia a classe PilhaDinamica
 	
 	public static void main( String[] args ){
 		System.out.println( "\n>>> Pilha Dinamica <<<\n" );
-		pilhaD = new pilhaDinamica(); // Construtor da Pilha Dinamica
+		pilhaD = new PilhaDinamica(); // Construtor da Pilha Dinamica
 		System.out.println("Topo da pilha: " + pilhaD.consultarTopo() );
 		System.out.println("A pilha esta vazia? " + pilhaD.vazia() );
  		pilhaD.empilhar("Item 1");
