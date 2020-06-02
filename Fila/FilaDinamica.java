@@ -2,31 +2,32 @@ package Fila;
 
 public class FilaDinamica {
 
-	class Celula{
+	class Celula {
 		
 		Object item; // Armazena o item/elemento/objeto
 		Celula anterior; // referencia para o objeto anterior
 		
-		public Celula(){
+		public Celula() {
 			item = null;
 			anterior = null;
 		}
 		
-		public Celula( Object valorItem ){
+		public Celula(Object valorItem) {
 			item = valorItem;
 			anterior = null;
 		}
 		
-		public Celula( Object valorItem, Celula celulaSeguinte ){
+		public Celula(Object valorItem, Celula celulaSeguinte) {
 			item = valorItem;
 			anterior = celulaSeguinte;
 		}
 	}
+	
 		private Celula inicio; // Referencia para o inicio da fila
 		private Celula fim ; // Referencia para o fim da fila
 		private int contador; // Contador de itens na fila
 		
-		public FilaDinamica(){
+		public FilaDinamica() {
 			inicio = null;
 			fim = null;
 			contador = 0;
@@ -36,13 +37,13 @@ public class FilaDinamica {
 			return( contador == 0 );
 		}
 		
-		public int tamanho(){
-			return( contador );
+		public int tamanho() {
+			return(contador);
 		}
 		
-		public void enfileirar( Object novoItem ){
-			Celula novaCelula = new Celula( novoItem );
-			if( inicio == null ){
+		public void enfileirar(Object novoItem) {
+			Celula novaCelula = new Celula(novoItem);
+			if(inicio == null) {
 				inicio = novaCelula;
 			} else {
 				fim.anterior = novaCelula;
@@ -52,7 +53,7 @@ public class FilaDinamica {
 		}
 		
 		public void enfileirarPrioridade (Object preferencial) {
-			Celula novaCelula = new Celula( preferencial );
+			Celula novaCelula = new Celula(preferencial);
 			if (inicio != null) {
  				novaCelula.anterior = inicio;
 			}
@@ -60,10 +61,10 @@ public class FilaDinamica {
 			contador++;
 		}
 		
-		public Object desenfileirar(){
+		public Object desenfileirar() {
 			Object x = null;
-			if( vazia() ){
-				System.out.println( "Erro: Fila vazia!" );
+			if(vazia()) {
+				System.out.println("Erro: Fila vazia!");
 		} else {
 			x = inicio.item;
 			inicio = inicio.anterior;
@@ -72,54 +73,55 @@ public class FilaDinamica {
 				}
 				contador--;
 		}
-		return( x );
+		return(x);
 		}
 		
-		public Object consultarInicio(){
+		public Object consultarInicio() {
 			Object x = null;
 			if( vazia() ){
-				System.out.println( "Erro: Fila vazia!" );
+				System.out.println("Erro: Fila vazia!");
 			} else {
 					x = inicio.item;
 			}
-		return( x );
+		return(x);
 		}
 		
-		public Object consultarFim(){
+		public Object consultarFim() {
 			Object x = null;
-			if( vazia() ){
-				System.out.println( "Erro: Fila vazia!" );
-			}else{
+			if(vazia()) {
+				System.out.println("Erro: Fila vazia!");
+			} else {
 				x = fim.item;
 			}
-			return( x );
+			return(x);
 		}
 		
-		public Object clonar(){
+		public Object clonar() {
 			FilaDinamica itemAux = new FilaDinamica();
 			FilaDinamica cloneFila = new FilaDinamica();
-			while( !vazia() ){
-				itemAux.enfileirar( desenfileirar() );
+			while(!vazia()){
+				itemAux.enfileirar(desenfileirar());
 			}
-			while( !itemAux.vazia() ){
+			while(!itemAux.vazia()) {
 				Object x = itemAux.desenfileirar();
-				enfileirar( x );
+				enfileirar(x);
 				cloneFila.enfileirar( x );
 			}
 		return( cloneFila );
 		}
 		
-		public String toString(){
+		public String toString() {
 			String filaCompleta = "";
-			if( vazia() ){
+			if(vazia()) {
 				filaCompleta = null;
-			}else{
-				for( int i = 0; i < contador; i++ ){
+			} else {
+				for(int i = 0; i < contador; i++) {
 					Object tempObject = desenfileirar();
 					filaCompleta = filaCompleta + "\n" + tempObject;
-					enfileirar( tempObject );
+					enfileirar(tempObject);
 				}
 			}
-			return( filaCompleta );
+			return(filaCompleta);
 		}
+		
 }

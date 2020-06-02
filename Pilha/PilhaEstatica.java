@@ -49,23 +49,23 @@ public class PilhaEstatica {
 		return (x);
 	}
 	
-	public Object consultarTopo(){
+	public Object consultarTopo() {
 		Object x = null;
-		if( vazia() ){
-			System.out.println( "Erro: Pilha vazia!!" );
+		if(vazia()) {
+			System.out.println("Erro: Pilha vazia!");
 		}else{
-			x = itemArray[ topo-1 ];
+			x = itemArray[topo-1];
 		}
 			return( x );
 	}
 	
-	public String toString(){
+	public String toString() {
 		String pilhaCompleta = "";
-		if( vazia() ){
+		if(vazia()) {
 			pilhaCompleta = null;
  		}else{
- 			for(int i = topo-1; i >= 0; i-- ){
-				pilhaCompleta = pilhaCompleta + "\n" + itemArray[ i ];
+ 			for(int i = topo-1; i >= 0; i--) {
+				pilhaCompleta = pilhaCompleta + "\n" + itemArray[i];
 			}
 		}
 		return(pilhaCompleta);
@@ -81,9 +81,12 @@ public class PilhaEstatica {
 				pilhaInverse[aux] = desempilhar();
 			}
 		}
-		itemArray = pilhaInverse;
+		for(int i = 0; i < pilhaInverse.length; i++) {
+			empilhar( pilhaInverse[i]);
+		}
 	}
 	
+	@SuppressWarnings("null")
 	public Object clonar() {
 		Object pilhaClone = null;
 		if (vazia() ) {
@@ -94,11 +97,5 @@ public class PilhaEstatica {
 			}
 		return(pilhaClone);
 	}
-	/*public static void main(String[] args) {
-		PilhaEstatica pe = new PilhaEstatica(100);
-		System.out.println(pe.topo);//0
-		System.out.println(pe.vazia()); // True
-		System.out.println(pe.capacidade()); //10
-	}*/
 
 }
