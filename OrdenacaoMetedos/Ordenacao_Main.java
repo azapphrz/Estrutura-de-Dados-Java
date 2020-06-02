@@ -18,25 +18,31 @@ public class Ordenacao_Main {
 		// Instancie um vetor resultado, que conterá o resultado da ordenação
 		int[] resultado;// Ordene o vetor de inteiros pelo método BubbleSort
 		resultado = order.BubbleSort(dados);
+		
 		// Exiba o vetor ordenado
 		System.out.println("BubbleSort: " + order.exibirVetor(resultado));
 		
 		// Ordene o vetor de inteiros pelo método SelectionSort
 		resultado = order.SelectionSort(dados);
+		
 		// Exiba o vetor ordenado
 		System.out.println("SelectionSort: " + order.exibirVetor(resultado));
 		
 		// Ordene o vetor de inteiros pelo método InsertionSort
 		resultado = order.InsertionSort(dados);
+		
 		// Exiba o vetor ordenado
 		System.out.println("InsertionSort: " + order.exibirVetor(resultado));
 		
 		// Ordene o vetor de inteiros pelo método QuickSort
 		resultado = order.QuickSort(dados, 0, dados.length-1);
+		
 		// Exiba o vetor ordenado
 		System.out.println("QuickSort: " + order.exibirVetor(resultado));
-		// Ordene o vetor de inteiros pelo método MergeSort
+		
+		// Ordene o vetor de inteiros pelo metodo MergeSort
 		resultado = order.MergeSort(dados, 0, dados.length-1);
+		
 		// Exiba o vetor ordenado
 		System.out.println("MergeSort: " + order.exibirVetor(resultado));
 

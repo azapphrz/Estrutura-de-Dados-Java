@@ -1,8 +1,8 @@
 package Pilha;
 
-public class testePilhaD {
+public class TestePilhaD {
 	
-	private static pilhaDinamica pilhaD; // Instacia a classe PilhaDinamica
+	private static PilhaDinamica pilhaD; // Instacia a classe PilhaDinamica
 	
 	public static void main( String[] args ){
 		

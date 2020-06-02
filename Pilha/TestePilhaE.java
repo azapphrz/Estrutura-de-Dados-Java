@@ -1,6 +1,6 @@
 package Pilha;
 
-public class testePilhaE {
+public class TestePilhaE {
 
 	private static PilhaEstatica pilhaE; // Instacia a classe PilhaEstatica
 		
@@ -23,15 +23,15 @@ public class testePilhaE {
 		pilhaE.empilhar("t2");
 		pilhaE.empilhar("t3");
 		
-		System.out.println("Conteúdo da pilha:" + pilhaE.toString() );
+		System.out.println("Conteï¿½do da pilha:" + pilhaE.toString() );
 		
 		System.out.println("Tamanho da pilha: " + pilhaE.tamanho());
 		
 		//System.out.println("Topo da pilha: " + pilhaE.consultarTopo());
-		//System.out.println("Conteúdo da pilha:" + pilhaE.toString());
+		//System.out.println("ConteÃºdo da pilha:" + pilhaE.toString());
 		//System.out.println("Tamanho da pilha: " + pilhaE.tamanho());
 		//System.out.println(pilhaE.desempilhar());
-		/*System.out.println("Conteúdo da pilha:" + pilhaE.toString());
+		/*System.out.println("ConteÃºdo da pilha:" + pilhaE.toString());
 		System.out.println("Tamanho da pilha: " + pilhaE.tamanho());
 		*/
 	}

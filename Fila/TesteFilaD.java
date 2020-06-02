@@ -24,13 +24,13 @@ public class TesteFilaD {
 		filaD.enfileirarPrioridade(455);
 		filaD.enfileirar( "Item 2" );
 		
-		System.out.println("Conteúdo da Fila:" + filaD.toString());
+		System.out.println("Conteudo da Fila:" + filaD.toString());
  		
 		System.out.println( "Tamanho da Fila: " + filaD.tamanho() );
 		
  		filaD.desenfileirar();
 		
-		System.out.println("Conteúdo da Fila:" + filaD.toString());
+		System.out.println("Conteudo da Fila:" + filaD.toString());
 		System.out.println("Tamanho da Fila: " + filaD.tamanho());
 
 	}

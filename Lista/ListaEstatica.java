@@ -5,13 +5,13 @@ public class ListaEstatica {
 	private int inicio;	// Indicador do inicio da lista
 	private int fim;	// Indicador do fim da lista
 	private int contador;  // Contado de elementos na lista
-	private int capacidade; //Capacidade máxima da lista
+	private int capacidade; //Capacidade mï¿½xima da lista
 	private Object[] itemArray;  // Armazenador de objetos 
 	
 	public ListaEstatica() {
 		this(10);
 	}
-	//Construtor com capacidade máxima especificada
+	//Construtor com capacidade mï¿½xima especificada
 	public ListaEstatica(int maxCapacidade) {
 		inicio = 0;
 		fim = 0;
@@ -191,7 +191,7 @@ public class ListaEstatica {
 	public Object consultarInicio() {
 		return(itemArray[inicio]); 
 	}
-	// Consultar o último item da lista
+	// Consultar o ï¿½ltimo item da lista
 	public Object consultarFim() {
 		return(itemArray[contador-1]); 
 	}
@@ -202,11 +202,11 @@ public class ListaEstatica {
 			for (int i = 0; i < contador+1; i++) {
 				if (itemArray[i] == busca) {
 					posicao = i;
-					System.out.println("O item "+busca+" foi encotrado na posição "+posicao);
+					System.out.println("O item "+busca+" foi encotrado na posicao "+posicao);
 				} 
 			}
 		} else {
-			System.out.println("ERRO: Impossível buscar item, lista vazia!");
+			System.out.println("ERRO: Impossivel buscar item, lista vazia!");
 		}	
 	}
 	

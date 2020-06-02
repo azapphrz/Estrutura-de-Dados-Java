@@ -25,6 +25,7 @@ public class PilhaEstatica {
 	public int tamanho() {
 		return (contador);
 	}
+	
 	public int capacidade() {
 		return(capacidade);
 	}
@@ -74,11 +75,14 @@ public class PilhaEstatica {
 	public void inverse() {
 		Object[] pilhaInverse = new Object[capacidade];
 		if(vazia()) {
-		 System.out.println("ERRO");
+		 System.out.println("ERRO: pilha vazia!");
 		} else {
-			for (int aux = 0; aux <= topo-1; aux++) {
+			for (int aux = 0; aux < capacidade; aux++) {
 				System.out.println(contador);
 				pilhaInverse[aux] = desempilhar();
+			}
+			for (int aux = 0; aux < pilhaInverse.length; aux++) {
+				empilhar(pilhaInverse[aux]);
 			}
 		}
 		for(int i = 0; i < pilhaInverse.length; i++) {

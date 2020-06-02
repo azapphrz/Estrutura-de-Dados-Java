@@ -31,8 +31,8 @@ public class TesteListaE {
 		// Vericando o primeiro item da lista
 		System.out.println("Primeiro item: " + listaE.consultarInicio());
 
-		// Vericando o último item da lista
-		System.out.println("Último item: " + listaE.consultarFim());
+		// Vericando o ï¿½ltimo item da lista
+		System.out.println("ï¿½ltimo item: " + listaE.consultarFim());
 		
 		// Retirando um item da lista
 		listaE.retirarFim();
@@ -72,8 +72,8 @@ public class TesteListaE {
 		// Vericando o primeiro item da lista
 		System.out.println("Primeiro item: " + listaE.consultarInicio());
 
-		// Vericando o último item da lista
-		System.out.println("Último item: " + listaE.consultarFim());
+		// Vericando o ï¿½ltimo item da lista
+		System.out.println("Ultimo item: " + listaE.consultarFim());
 		
 	}
 }

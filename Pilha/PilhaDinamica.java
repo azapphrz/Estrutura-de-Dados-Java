@@ -22,6 +22,14 @@ public class pilhaDinamica {
 		}
 	}
 	
+	public Celula( Object valorItem, Celula celulaAnterior ){
+		item = valorItem;
+		anterior = celulaAnterior;
+	}
+}
+
+public class PilhaDinamica {
+	
 	private Celula topo; // Referencia para o topo da pilha
 	private int contador; // Contador do numero de itens na pilha
 	

@@ -45,7 +45,7 @@ public class ListaDinamica {
 	public boolean chaveValida(int x) {
 		return(1 <= x && x <= contador);
 	}
-	// Inserir objeto na lista em uma certa posição
+	// Inserir objeto na lista em uma certa posiï¿½ï¿½o
 	public void inserir(Object novoItem, int posicao) {
 		Celula novaCelula, tempCelula;
 		int i;
@@ -178,7 +178,7 @@ public class ListaDinamica {
 	public Object consultarInicio() {
 		return(inicio.item); 
 	}
-	// Consultar o último item da lista
+	// Consultar o ï¿½ltimo item da lista
 	public Object consultarFim() {
 		return(fim.item);
 	}

@@ -1,8 +1,8 @@
 package Iterativo_Recursivo;
 
-public class maiorElemento{
+public class MaiorElemento{
 
-    public static int maiorElemento(int[] elementos){
+    private static int maiorElemento(int[] elementos){
         int temp;
         temp = elementos[0];
         for(int i = 1; i < elementos.length; i++){

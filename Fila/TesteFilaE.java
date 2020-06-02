@@ -25,16 +25,16 @@ public class TesteFilaE {
 		
 		System.out.println("Frente da Fila: " + filaE.consultarInicio());
 		
-		System.out.println("A Fila está cheia? "+ filaE.cheia());
+		System.out.println("A Fila esta cheia? "+ filaE.cheia());
 		
-		System.out.println("Conteúdo da Fila:" + filaE.toString());
+		System.out.println("Conteudo da Fila:" + filaE.toString());
 		
 		System.out.println("Tamanho da Fila: " + filaE.tamanho());
 		
 		System.out.println("Exite o item na Fila? " + filaE.buscar(1.322));
 		
 		/*filaE.desenfileirar();
-		System.out.println("Conteúdo da Fila:" + filaE.toString());
+		System.out.println("Conteudo da Fila:" + filaE.toString());
 		System.out.println("Tamanho da Fila: " + filaE.tamanho());
 		*/
 	}
