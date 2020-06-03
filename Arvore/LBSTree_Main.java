@@ -36,7 +36,7 @@ public class LBSTree_Main {
 		System.out.println("A raiz: " + tree.consultarRaiz());
 		
 		// Imprimindo a altura da árvore
-		System.out.println(tree.altura());
+		System.out.println("Altura: "+ tree.altura());
 		
 		// Retirando a raiz da árvore
 		tree.retirar("8");

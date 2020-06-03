@@ -210,16 +210,23 @@ public class LBSTree {
 		return(aux);
 	}
 	
-	public void altura() {
-		altura(raiz);
+	public int altura() {
+		return(alturaArvore(raiz));
 	}
 	
-	public int altura(LBSTreeNode treeRef) {
+	public int alturaArvore(LBSTreeNode treeRef) {
 	     if(treeRef == null)
 	       return (-1);
 	     else {
-	    	 return (treeRef.compararCom(treeRef.linkRight));
+	    	return(1 + Math.max(alturaArvore(treeRef.linkRight), 
+	    			alturaArvore(treeRef.linkLeft)));
+//	    	int le = alturaArvore (treeRef.linkLeft);
+//	    	int ld = alturaArvore (treeRef.linkRight);
+//	    	if (le < ld) 
+//	    		return ld + 1;
+//	    	else 
+//	    		return le + 1;
 	     }
 	  }
-
+	
 }
