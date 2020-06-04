@@ -30,7 +30,7 @@ public class LBSTree_Main {
 		System.out.println("Caminhamento Post-Order:" + tree.caminhar(3));
 		
 		//Verifacando se a um item esta na árvore (5)
-		System.out.println("\nBuscar o item: " + tree.buscar("5"));
+		System.out.println("\nBuscar o item: " + tree.buscar("510"));
 		
 		//Imprimindo a raiz da árvore
 		System.out.println("A raiz: " + tree.consultarRaiz());

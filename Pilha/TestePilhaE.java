@@ -23,16 +23,21 @@ public class TestePilhaE {
 		pilhaE.empilhar("t2");
 		pilhaE.empilhar("t3");
 		
-		System.out.println("Conte�do da pilha:" + pilhaE.toString() );
+		System.out.println("Conteudo da pilha:" + pilhaE.toString() );
 		
 		System.out.println("Tamanho da pilha: " + pilhaE.tamanho());
 		
-		//System.out.println("Topo da pilha: " + pilhaE.consultarTopo());
-		//System.out.println("Conteúdo da pilha:" + pilhaE.toString());
-		//System.out.println("Tamanho da pilha: " + pilhaE.tamanho());
-		//System.out.println(pilhaE.desempilhar());
-		/*System.out.println("Conteúdo da pilha:" + pilhaE.toString());
+		System.out.println("Topo da pilha: " + pilhaE.consultarTopo());
+		
+		System.out.println("Conteudo da pilha:" + pilhaE.toString());
+		
 		System.out.println("Tamanho da pilha: " + pilhaE.tamanho());
-		*/
+		
+		pilhaE.desempilhar();
+		
+		System.out.println("Conteudo da pilha:" + pilhaE.toString());
+		
+		System.out.println("Tamanho da pilha: " + pilhaE.tamanho());
+		
 	}
 }

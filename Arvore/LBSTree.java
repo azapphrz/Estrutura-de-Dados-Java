@@ -217,16 +217,29 @@ public class LBSTree {
 	public int alturaArvore(LBSTreeNode treeRef) {
 	     if(treeRef == null)
 	       return (-1);
-	     else {
+	     else 
 	    	return(1 + Math.max(alturaArvore(treeRef.linkRight), 
 	    			alturaArvore(treeRef.linkLeft)));
+	     // Não usando função do Java
 //	    	int le = alturaArvore (treeRef.linkLeft);
 //	    	int ld = alturaArvore (treeRef.linkRight);
 //	    	if (le < ld) 
 //	    		return ld + 1;
 //	    	else 
 //	    		return le + 1;
-	     }
 	  }
 	
+	public int grau(LBSTreeNode treeRef) {
+		if (vazia()) {
+			System.out.println("ERRO: Arvore vazia!");
+			return(-1);
+		} else {
+			if (buscar(treeRef) == null) {
+				System.out.println("ERRO: Não existe o item na Arvore!");
+				return(-1);
+			} else {
+				return()
+			}
+		}
+	}
 }
