@@ -9,3 +9,4 @@ Estrutura de dados em java, com alguns Tipos Abstados de Dados
 - Pilha
 - Lista
 - Árvore
+- Hash
