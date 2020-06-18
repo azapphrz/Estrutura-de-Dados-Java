@@ -23,8 +23,8 @@ public class FilaDinamica {
 		}
 	}
 	
-		private Celula inicio; // Referencia para o inicio da fila
-		private Celula fim ; // Referencia para o fim da fila
+		private Celula inicio;  // Referencia para o inicio da fila
+		private Celula fim ;   // Referencia para o fim da fila
 		private int contador; // Contador de itens na fila
 		
 		public FilaDinamica() {
@@ -61,6 +61,13 @@ public class FilaDinamica {
 			contador++;
 		}
 		
+		public void enfileirarPenalidade (Object penalisado) {
+			if(vazia()) {
+				System.out.println("ERRO: Fila vazia");
+			} else {
+				
+			}
+		}
 		public Object desenfileirar() {
 			Object x = null;
 			if(vazia()) {

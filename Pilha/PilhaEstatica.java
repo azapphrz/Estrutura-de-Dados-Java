@@ -102,4 +102,11 @@ public class PilhaEstatica {
 		return(pilhaClone);
 	}
 
+	public NewPilhaEstatica(int maxCapacidade) {
+		topo = 0;
+		contador = 0;
+		capacidade = maxCapacidade;
+		itemArray = new Object[capacidade];
+	}	
+
 }

@@ -70,7 +70,7 @@ public class ListaEstatica {
 			}
 		}
 	}
-	//Deslocar itens na lista para a direita(1) ou esquerda(-1)
+	// Deslocar itens na lista para a direita(1) ou esquerda(-1)
 	private void mover(int begin, int end, int shift) {
 		int i, j;
 		if(shift == 1) { // Deslocamento para a direita
@@ -136,7 +136,7 @@ public class ListaEstatica {
 		if(vazia()) { 
 			x = "'Erro: Lista vazia!'";
 		} else {
-			if(posicao == inicio) { // Retirar ]do inicio
+			if(posicao == inicio) { // Retirar do inicio
 				x = itemArray[inicio];
 				inicio = (inicio + 1) % capacidade;
 				contador--;
@@ -179,7 +179,7 @@ public class ListaEstatica {
 				i = ( i + 1 ) % capacidade;
 			} 
 		}
-	return( listaCompleta ); 
+	return(listaCompleta); 
 	}
 	// Limpar o conteudo da lista
 	public void limpar() {
@@ -191,23 +191,35 @@ public class ListaEstatica {
 	public Object consultarInicio() {
 		return(itemArray[inicio]); 
 	}
-	// Consultar o �ltimo item da lista
+	// Consultar o ultimo item da lista
 	public Object consultarFim() {
 		return(itemArray[contador-1]); 
 	}
 	//Buscar um item na lista
-	public void buscar(Object busca) {
-		int posicao;
+	public int buscar(Object busca) {
+		int posicao = -1;
 		if (!vazia()) {
-			for (int i = 0; i < contador+1; i++) {
+			for (int i = 0; i < contador; i++) {
 				if (itemArray[i] == busca) {
-					posicao = i;
-					System.out.println("O item "+busca+" foi encotrado na posicao "+posicao);
-				} 
+					posicao = i+1;
+				}
 			}
 		} else {
-			System.out.println("ERRO: Impossivel buscar item, lista vazia!");
-		}	
+			System.out.println(("ERRO: Lista Vazia!"));
+		}
+		return(posicao);
 	}
 	
+//	public void intersecao(){
+//		PilhaEstatica pilhaComun;
+//		if (!vazia()) {
+//			for (int i = 0; i < contador; i++) {
+//				if (itemArray[i] == pilhaComun[i]) {
+//					
+//				}
+//			}
+//		} else {
+//			System.out.println(("ERRO: Lista Vazia!"));
+//		}
+//	}
 }

@@ -3,8 +3,8 @@ package Arvore;
 class LBSTreeNode {
 	
 	Object item; // Armazenador de um item
-	LBSTreeNode linkLeft; // Referencia para um item à esquerda
-	LBSTreeNode linkRight; // Referencia para um item à direita
+	LBSTreeNode linkLeft; // Referencia para um item ï¿½ esquerda
+	LBSTreeNode linkRight; // Referencia para um item ï¿½ direita
 	
 	// Construtor padrao inicialmente vazio
 	public LBSTreeNode() {
@@ -79,7 +79,7 @@ public class LBSTree {
 	public void retirar(Object item, LBSTreeNode treeRef) {
 		LBSTreeNode antecessor = null;
 		if(vazia()) { // Verificar se a arvore esta vazia
-			System.out.println("EERO: Árvore vazia!");
+			System.out.println("EERO: ï¿½rvore vazia!");
 		} else { // Obtem o sucessor (pai) di=o item a ser retirado
 			while (treeRef != null && treeRef.item != item) {
 				antecessor = treeRef;
@@ -89,12 +89,12 @@ public class LBSTree {
 					treeRef = treeRef.linkRight;
 			}
 			if(treeRef.linkLeft == null && treeRef.linkRight == null) { // Folha
-				if(treeRef != raiz) { // Não é a raiz
+				if(treeRef != raiz) { // Nï¿½o ï¿½ a raiz
 					if(treeRef == antecessor.linkLeft)
 						antecessor.linkLeft = null;
 					else
 					antecessor.linkRight = null;
-				} else { //É a raiz
+				} else { //ï¿½ a raiz
 					raiz = null;
 				}
 			} else if(treeRef.linkLeft != null && treeRef.linkRight != null) { // Ramo com dois filhos
@@ -108,12 +108,12 @@ public class LBSTree {
 				treeRef.item = valorItem;
 			} else { // Ramo com apenas um filhos
 				LBSTreeNode folha = (treeRef.linkLeft != null) ? treeRef.linkLeft : treeRef.linkRight;
-				if(treeRef != raiz) { // Não é a raiz
+				if(treeRef != raiz) { // Nï¿½o ï¿½ a raiz
 					if (treeRef == antecessor.linkLeft)
 						antecessor.linkLeft = folha;
 					else
 						antecessor.linkRight = folha;
-				} else { // É a raiz
+				} else { // ï¿½ a raiz
 					raiz = folha;
 				}
 			}
@@ -126,12 +126,6 @@ public class LBSTree {
 		}
 		return(treeNode);
 	}	
-//	protected LBSTreeNode valorMinimo(LBSTreeNode treeNode) {
-//		while (treeNode.linkLeft != null) {
-//			treeNode = treeNode.linkLeft;
-//		}
-//		return(treeNode);
-//	}
 	// Procurar cadeia de caracteres na arvore
 	LBSTreeNode buscar(Object valorItem) {
 		LBSTreeNode treeRef = raiz;
@@ -220,25 +214,32 @@ public class LBSTree {
 	     else 
 	    	return(1 + Math.max(alturaArvore(treeRef.linkRight), 
 	    			alturaArvore(treeRef.linkLeft)));
-	     // Não usando função do Java
+	     // Nï¿½o usando funï¿½ï¿½o do Java
 //	    	int le = alturaArvore (treeRef.linkLeft);
 //	    	int ld = alturaArvore (treeRef.linkRight);
 //	    	if (le < ld) 
 //	    		return ld + 1;
 //	    	else 
 //	    		return le + 1;
-	  }
-	
-	public int grau(LBSTreeNode treeRef) {
+	}
+
+	public int grauArvore(String treeRef) {
+		LBSTreeNode node = new LBSTreeNode();
 		if (vazia()) {
 			System.out.println("ERRO: Arvore vazia!");
 			return(-1);
 		} else {
-			if (buscar(treeRef) == null) {
-				System.out.println("ERRO: Não existe o item na Arvore!");
+			node = buscar(treeRef);
+			if (node == null) {
+				System.out.println("ERRO: Nao existe o item na Arvore!");
 				return(-1);
 			} else {
-				return()
+				if ((node.linkRight == null) && (node.linkLeft == null))
+					return(0);
+				else if ((node.linkLeft != null) && (node.linkRight != null))
+					return(2);
+				else
+					return(1);
 			}
 		}
 	}

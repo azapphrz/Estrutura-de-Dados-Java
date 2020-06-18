@@ -22,6 +22,9 @@ public class TesteListaE {
 		// Verificando se a lista esta vazia
 		System.out.println("Lista vazia? " + listaE.vazia());
 		
+		//Buscando um item
+		System.out.println("Buscar: "+ listaE.buscar("J"));
+		
 		// Verificando o tamanho da lista
 		System.out.println("Tamanho da lista: " + listaE.tamanho());
 		
@@ -32,7 +35,7 @@ public class TesteListaE {
 		System.out.println("Primeiro item: " + listaE.consultarInicio());
 
 		// Vericando o �ltimo item da lista
-		System.out.println("�ltimo item: " + listaE.consultarFim());
+		System.out.println("Ultimo item: " + listaE.consultarFim());
 		
 		// Retirando um item da lista
 		listaE.retirarFim();
@@ -72,7 +75,7 @@ public class TesteListaE {
 		// Vericando o primeiro item da lista
 		System.out.println("Primeiro item: " + listaE.consultarInicio());
 
-		// Vericando o �ltimo item da lista
+		// Vericando o ultimo item da lista
 		System.out.println("Ultimo item: " + listaE.consultarFim());
 		
 	}

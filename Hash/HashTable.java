@@ -34,10 +34,10 @@ public class HashTable {
 	protected int capacidade; // Capacidade maxima de objetos na tabela
 	protected int contador; // Contador de itens na tabela
 	protected HashCelula[] hashArray; // Armazenador de objetos
-	protected boolean enderecoAberto; // Endereçamento aberto true ou false
+	protected boolean enderecoAberto; // Endereï¿½amento aberto true ou false
 	protected boolean useRehash; // Indicador de uso de rehash
 
-	// Construtor com armazenador com 100 posições
+	// Construtor com armazenador com 100 posiï¿½ï¿½es
 	public HashTable() {
 		this(100);
 	}
@@ -51,7 +51,7 @@ public class HashTable {
 		hashArray = new HashCelula[capacidade - 1];
 	}
 
-	// Função Hash para calcular o endereçamento a partir da chave
+	// Funï¿½ï¿½o Hash para calcular o endereï¿½amento a partir da chave
 	public int funcaoHash(Object valor, int max) {
 		return (Integer.parseInt(valor.toString()) % max + 1);
 	}
@@ -66,12 +66,12 @@ public class HashTable {
 		return (contador);
 	}
 
-	// Ligar endereçamento aberto
+	// Ligar endereï¿½amento aberto
 	public void enderecoAbertoOn() {
 		enderecoAberto = true;
 	}
 
-	// Desligar endereçamento aberto
+	// Desligar endereï¿½amento aberto
 	public void enderecoAbertoOff() {
 		enderecoAberto = false;
 	}
@@ -86,19 +86,19 @@ public class HashTable {
 		useRehash = false;
 	}
 
-	// Recalcular a proxima posição na tabela
+	// Recalcular a proxima posiï¿½ï¿½o na tabela
 	public int reHash(int valor) {
 		return ((valor + capacidade - 1) % capacidade);
 	}
 
 	// -----------------------------------------------
 
-	// Testar se posição é valida
+	// Testar se posiï¿½ï¿½o ï¿½ valida
 	protected boolean chaveValida(int valido) {
 		return (0 <= valido && valido < capacidade);
 	}
 
-	// Indicar a proxima posição na tabela
+	// Indicar a proxima posiï¿½ï¿½o na tabela
 	public int proximo(int valor) {
 		int aux;
 		if (useRehash)
@@ -125,10 +125,10 @@ public class HashTable {
 		}
 	}
 
-	// Inserir dado na tabela com endereçamento aberto
+	// Inserir dado na tabela com endereï¿½amento aberto
 	public void inserirAberto(String valor, int pos) {
 		int aux = proximo(pos);
-		while (n != pos && (hashArray[aux] != null))
+		while (aux != pos && (hashArray[aux] != null))
 			aux = proximo(aux);
 		if (aux == pos)
 			System.out.println("ERRO: Capacidade da Hash foi excedida!");
@@ -138,7 +138,7 @@ public class HashTable {
 		}
 	}
 
-	// Inserir dado na tabela com endereçamento em separado
+	// Inserir dado na tabela com endereï¿½amento em separado
 	public void inserirLink(String valor, int pos) {
 		HashCelula aux;
 		aux = new HashCelula(valor);
@@ -157,14 +157,14 @@ public class HashTable {
 				HashCelula anterior = null;
 				HashCelula aux = hashArray[pos];
 				boolean result = valor.equals(aux.toString());
-				if (result) { // Item esta na posição direta na Hash
+				if (result) { // Item esta na posiï¿½ï¿½o direta na Hash
 					if (enderecoAberto)
 						hashArray[pos] = null;
 					else
 						hashArray[pos] = aux.link;
 					contador--;
-				} else { // Item não esta na posição direita na Hash
-					if (enderecoAberto) { // Item em outra posições]
+				} else { // Item nï¿½o esta na posiï¿½ï¿½o direita na Hash
+					if (enderecoAberto) { // Item em outra posiï¿½ï¿½es]
 						int n = proximo(pos);
 						while (n != pos && !result) {
 							aux = hashArray[n];
@@ -210,7 +210,7 @@ public class HashTable {
 			aux = hashArray[pos];
 			if(aux != null);
 			result = valor.equals(aux.toString());
-			if(enderecoAberto) { // Enderaçamento aberto
+			if(enderecoAberto) { // Enderaï¿½amento aberto
 				n = proximo(pos);
 				while(n != pos && !result) {
 					aux = hashArray[n];
@@ -222,7 +222,7 @@ public class HashTable {
 							n = proximo(n);
 					}
 				}
-			} else { // Endereçamento por link encadeado
+			} else { // Endereï¿½amento por link encadeado
 				aux = aux.link;
 				while(aux != null && !result) {
 					result = valor.equals(aux.toString());
@@ -241,7 +241,7 @@ public class HashTable {
 		for (int i = 0; i < capacidade; i++) {
 			aux = hashArray[i];
 			if(aux != null) {
-				fullHash = fullHash = "\n" + String.valueOf(i) + ".( ";
+				fullHash = fullHash + "\n" + String.valueOf(i) + ".( ";
 				fullHash = fullHash + aux.toString();
 				aux = aux.link;
 				while(aux != null) {

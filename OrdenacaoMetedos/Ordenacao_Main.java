@@ -45,6 +45,13 @@ public class Ordenacao_Main {
 		
 		// Exiba o vetor ordenado
 		System.out.println("MergeSort: " + order.exibirVetor(resultado));
+		
+		// Ordene o vetor de inteiros pelo metodo ShellSort
+		resultado = order.ShellSort(dados);
+		
+		// Exiba o vetor ordenado
+		System.out.println("ShellSort: " + order.exibirVetor(resultado));
+		
 
 	}
 }

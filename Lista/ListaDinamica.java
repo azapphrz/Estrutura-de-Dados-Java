@@ -66,7 +66,7 @@ public class ListaDinamica {
 				}
 				inicio = novaCelula;
 				contador++;
-			}else { // Inserir no meio da lista
+			} else { // Inserir no meio da lista
 				if(!chaveValida(posicao)) {
 					System.out.println("ERRO: Indice invalido!");
 				} else {
@@ -172,6 +172,7 @@ public class ListaDinamica {
 	public void limpar() {
 		for (int i = contador; i >= 0; i--) {
 			Object item = retirar(i);
+			inicio = fim = null;
 		}
 	}
 	// Consultar o primeiro item da lista
@@ -183,4 +184,38 @@ public class ListaDinamica {
 		return(fim.item);
 	}
 		
+	public Celula buscar(Object item) {
+		Celula atual = inicio;
+
+		while (atual != null) {
+			if (atual.item.equals(item)) {
+				return atual;
+			}
+			atual = atual.link;
+		}
+		return atual;
+		
+	}
+
+    public void trocar(Object item1, Object item2) {
+        if (vazia()) {
+            System.out.println("ERRO: Lista vazia!");
+        } else {
+            Celula elemento1 = buscar(item1);
+            Celula elemento2 = buscar(item2);
+            if ((elemento1 != null) && (elemento2 != null)) {
+                Celula x = inicio;
+                while(x != null) {
+                    if(x.item == item1) {
+                        x.item = item2;
+                        elemento2.item = item1;
+                    }
+                    x = x.link;
+                }
+            } else {
+                System.out.println("ERRO: Um dos itens n�o existe!");
+            }
+        }
+    }
+	
 }

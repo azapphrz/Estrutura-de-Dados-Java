@@ -33,9 +33,9 @@ public class TesteFilaE {
 		
 		System.out.println("Exite o item na Fila? " + filaE.buscar(1.322));
 		
-		/*filaE.desenfileirar();
+		System.out.println("re: "+filaE.desenfileirar());
 		System.out.println("Conteudo da Fila:" + filaE.toString());
 		System.out.println("Tamanho da Fila: " + filaE.tamanho());
-		*/
+		
 	}
 }
