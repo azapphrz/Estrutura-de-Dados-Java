@@ -30,7 +30,6 @@ public class TestePilhaD {
 		System.out.println("A pilha esta vazia? " + pilhaD.vazia());
 		
 		pilhaD.desempilhar();
-		pilhaD.desempilhar();
 		
 		System.out.println("Conteudo da pilha:" + pilhaD.toString());
 		

@@ -131,4 +131,31 @@ public class FilaDinamica {
 			return(filaCompleta);
 		}
 		
+		public int buscar(Object ValorItem) {
+		    Celula busca = inicio;
+		    for (int i=1; i<=contador; i++) {
+		      if (busca.item.equals(ValorItem))
+		        return (i);
+		      busca = busca.anterior;
+		    }
+		    return (-1);
+		  }
+		
+		public void enfileirarComPenalidade(Object valorItem) {
+		    int busca = buscar(valorItem);
+		    if (busca==-1) {
+		      enfileirar(valorItem);
+		      return;
+		    }
+		    Celula temp = this.inicio;
+		    this.inicio = null;
+		    int size = contador;
+		    this.contador = 0;
+		    for(int i=1;i<=size;i++) {
+		      if (i != busca)
+		        enfileirar(temp.item);
+		      temp = temp.anterior;
+		    }
+		    enfileirar(valorItem);
+		  }
 }

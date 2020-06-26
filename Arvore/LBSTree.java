@@ -200,8 +200,7 @@ public class LBSTree {
 	}
 
 	public Object consultarRaiz() {
-		Object aux = raiz;
-		return(aux);
+		return(raiz);
 	}
 	
 	public int altura() {
@@ -212,7 +211,7 @@ public class LBSTree {
 	     if(treeRef == null)
 	       return (-1);
 	     else 
-	    	return(1 + Math.max(alturaArvore(treeRef.linkRight), 
+	    	return(1 + Math.max(alturaArvore(treeRef.linkRight),
 	    			alturaArvore(treeRef.linkLeft)));
 	     // N�o usando fun��o do Java
 //	    	int le = alturaArvore (treeRef.linkLeft);
@@ -242,5 +241,27 @@ public class LBSTree {
 					return(1);
 			}
 		}
+	}
+	
+	public LBSTreeNode obterValorMaximo() {
+		LBSTreeNode treeNode = raiz;
+		if(vazia()) {
+			System.out.println("ERRO: Arvore vazia!");
+		} else {
+			while (treeNode.linkRight != null)
+				treeNode = treeNode.linkRight;
+		}
+	return(treeNode);
+	}
+
+	public LBSTreeNode obterValorMinimo() {
+		LBSTreeNode treeNode = raiz;
+		if(vazia()) {
+			System.out.println("ERRO: Arvore vazia!");
+		} else {
+			while (treeNode.linkLeft != null)
+				treeNode = treeNode.linkLeft;
+		}
+		return(treeNode);
 	}
 }

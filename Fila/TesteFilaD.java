@@ -32,6 +32,9 @@ public class TesteFilaD {
 		
 		System.out.println("Conteudo da Fila:" + filaD.toString());
 		System.out.println("Tamanho da Fila: " + filaD.tamanho());
+		
+		filaD.enfileirarComPenalidade(2323);
+		System.out.println("Conteudo da Fila:" + filaD.toString());
 
 	}
 }

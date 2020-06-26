@@ -8,7 +8,7 @@ public class TestePilhaE {
 		
 		System.out.println( ">>> Pilha Estatica <<<" );
 	 	
-		pilhaE = new PilhaEstatica(8); // Inicializa a classe PilhaEstatica
+		pilhaE = new PilhaEstatica(4); // Inicializa a classe PilhaEstatica
 		
 		System.out.println("Topo da pilha: " + pilhaE.consultarTopo());
 		
@@ -34,6 +34,12 @@ public class TestePilhaE {
 		System.out.println("Tamanho da pilha: " + pilhaE.tamanho());
 		
 		pilhaE.desempilhar();
+		
+		System.out.println("Conteudo da pilha:" + pilhaE.toString());
+		
+		System.out.println("Tamanho da pilha: " + pilhaE.tamanho());
+		
+		pilhaE.aumentarCapacidade(10);
 		
 		System.out.println("Conteudo da pilha:" + pilhaE.toString());
 		

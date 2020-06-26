@@ -97,10 +97,26 @@ public class FilaEstatica {
 	}
 	
 	public void limpar() {
-		for (int i = 0; i <= tamanho()+6; i++) {
+		for (int i = 0; i < capacidade; i++) {
 			itemArray[i] = desenfileirar();
 		}
 	}
 	
+	public void enfileirarComPenalidade(Object valorItem) {
+	    int aux = 0;
+	    boolean busca = false;
+	    for(int i=0; i < contador; i++) {
+	      if (itemArray[i].equals(valorItem)) {
+	        aux++;
+	        busca = true;
+	      }
+	      if (i+aux<contador)
+	        itemArray[i] = itemArray[i+aux];
+	    }
+	    if (busca)
+	      itemArray[contador] = valorItem;
+	    else
+	      enfileirar(valorItem);
+	  }
 
 }

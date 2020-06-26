@@ -57,7 +57,7 @@ public class PilhaEstatica {
 		}else{
 			x = itemArray[topo-1];
 		}
-			return( x );
+			return(x);
 	}
 	
 	public String toString() {
@@ -102,11 +102,15 @@ public class PilhaEstatica {
 		return(pilhaClone);
 	}
 
-	public NewPilhaEstatica(int maxCapacidade) {
-		topo = 0;
-		contador = 0;
-		capacidade = maxCapacidade;
-		itemArray = new Object[capacidade];
-	}	
-
+	public void aumentarCapacidade(int novaCapacidade) {
+		  if (capacidade > novaCapacidade) {
+		    System.out.println("ERRO: O novo tamanho é menor que o atual!");
+		  } else {
+		    Object[] pilhaAux = new Object[novaCapacidade];
+		    capacidade = novaCapacidade;
+		    for (int i=0; i < itemArray.length; i++)
+		      pilhaAux[i] = this.itemArray[i];
+		    itemArray = pilhaAux;
+		  }
+		}
 }

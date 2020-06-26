@@ -11,7 +11,7 @@ public class ListaEstatica {
 	public ListaEstatica() {
 		this(10);
 	}
-	//Construtor com capacidade mï¿½xima especificada
+	// Construtor com capacidade mï¿½xima especificada
 	public ListaEstatica(int maxCapacidade) {
 		inicio = 0;
 		fim = 0;
@@ -125,6 +125,9 @@ public class ListaEstatica {
 	public Object retirarInicio(){ 
 		return(retirar(inicio));
 	}
+	public Object retirar(){ 
+		return(retirar(inicio));
+	}
 	// Retirar objeto no fim da lista 
 	public Object retirarFim() { 
 		return(retirar(contador));
@@ -183,7 +186,7 @@ public class ListaEstatica {
 	}
 	// Limpar o conteudo da lista
 	public void limpar() {
-		for (int i = 0; i <= contador+1; i++) {
+		for (int i = 0; i < capacidade; i++) {
 			itemArray[i] = retirar(i);
 		}
 	}
@@ -210,16 +213,47 @@ public class ListaEstatica {
 		return(posicao);
 	}
 	
-//	public void intersecao(){
-//		PilhaEstatica pilhaComun;
-//		if (!vazia()) {
-//			for (int i = 0; i < contador; i++) {
-//				if (itemArray[i] == pilhaComun[i]) {
-//					
-//				}
-//			}
-//		} else {
-//			System.out.println(("ERRO: Lista Vazia!"));
-//		}
-//	}
+    public ListaEstatica intersecao(ListaEstatica lista) {   
+        ListaEstatica temp = lista;
+        int tamanho;
+        if (lista.contador > contador)
+            tamanho = contador;
+        else
+            tamanho = lista.tamanho();
+        ListaEstatica aux = new ListaEstatica(tamanho);
+        Object x = null;
+        for (int i = 0; i < tamanho; i++) {
+            x = temp.retirar();
+            if (buscar(x) != -1) {
+                aux.inserir(x);
+            }
+        }
+        return(aux);
+    }
+    
+    public void ordenar() {
+        if (contador == 0) {
+            System.out.println("ERRO: A lista está vazia!");
+        } else {
+            int compare;
+            for (int i = 0; i < contador; i++) {
+                for (int j = 0; j < itemArray.length-1; j++) {
+                    compare = itemArray[j+1].toString().compareTo(itemArray[j].toString());
+                    if (compare < 0) {
+                        Object aux = itemArray[j];
+                        itemArray[j] = itemArray[j+1];
+                        itemArray[j+1] = aux;
+                    }
+                }
+            }
+        }
+    }
+    
+	public Object consultar(int pos) {
+		Object item = null;	
+		if(!vazia())
+			if (0 <= pos && pos < capacidade) 
+				item = itemArray[pos];
+		return item;
+	}
 }

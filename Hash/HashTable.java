@@ -1,6 +1,7 @@
 package Hash;
 
 class HashCelula {
+	
 	protected Object chave; // Armazenador de um item
 	protected HashCelula link; // Referencia para outro item
 
@@ -51,7 +52,7 @@ public class HashTable {
 		hashArray = new HashCelula[capacidade - 1];
 	}
 
-	// Funï¿½ï¿½o Hash para calcular o endereï¿½amento a partir da chave
+	// Funçao Hash para calcular o endereçamento a partir da chave
 	public int funcaoHash(Object valor, int max) {
 		return (Integer.parseInt(valor.toString()) % max + 1);
 	}
@@ -93,7 +94,7 @@ public class HashTable {
 
 	// -----------------------------------------------
 
-	// Testar se posiï¿½ï¿½o ï¿½ valida
+	// Testar se posiçao é valida
 	protected boolean chaveValida(int valido) {
 		return (0 <= valido && valido < capacidade);
 	}
@@ -253,4 +254,22 @@ public class HashTable {
 		}
 	return(fullHash);
 	}
+	
+	public void inserir(String valor) {
+			int k = funcaoHash(valor, capacidade);
+			if (!chaveValida(k))
+				System.out.println("ERRO: Indice invalido!");
+			else
+				inserir(valor, k);	
+	}
+		
+	public void retirar(String valor) {
+		if (vazia())
+			System.out.println("ERRO: Tabela Hash vazia!");
+		else {
+			int k = funcaoHash(valor, capacidade);
+			retirar(valor, k);
+		}
+	}
 }
+

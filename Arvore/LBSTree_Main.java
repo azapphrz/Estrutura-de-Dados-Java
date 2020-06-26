@@ -4,7 +4,7 @@ public class LBSTree_Main {
 
 	public static void main(String[] args) {
 		
-		String[] vetorNum = new String[] {"5", "8", "3", "6", "9", "1", "4", "7", "2", "0"};
+		String[] vetorNum = new String[] {"41", "47", "38", "49", "34", "40", "43", "35","48"};
 		
 		// Criando a �rvore
 		LBSTree tree = new LBSTree(); 
@@ -38,20 +38,10 @@ public class LBSTree_Main {
 		// Imprimindo a altura da arvore
 		System.out.println("Altura: "+ tree.altura());
 
-		// Imprimindo o coteudo da arvore 
-		System.out.println("Conteudo da Arvore: " + tree.toString());
+		System.out.println("Grau: " + tree.grauArvore("35"));
 		
-		//Imprimindo a raiz da arvore
-		System.out.println("A raiz: " + tree.consultarRaiz());
+		System.out.println(tree.obterValorMaximo());
 		
-		// Retirando os itens 0, 6 e 3 da �rvore
-//		tree.retirar("0");
-//		tree.retirar("6");
-//		tree.retirar("3");
-
-		// Imprimindo o coteado da arvore 
-		System.out.println("Conteudo da Arvore: " + tree.toString());
-
-		System.out.println("Grau: " + tree.grauArvore("5"));
+		System.out.println(tree.obterValorMinimo());
 	}
 }

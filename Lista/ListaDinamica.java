@@ -177,11 +177,17 @@ public class ListaDinamica {
 	}
 	// Consultar o primeiro item da lista
 	public Object consultarInicio() {
-		return(inicio.item); 
+		if(!vazia())
+			return(inicio.item); 
+		else
+		return("Erro: lista vazia");
 	}
-	// Consultar o �ltimo item da lista
+	// Consultar o ultimo item da lista
 	public Object consultarFim() {
-		return(fim.item);
+		if(!vazia())
+			return(fim.item);
+		else
+		return("Erro: lista vazia");
 	}
 		
 	public Celula buscar(Object item) {
@@ -201,14 +207,13 @@ public class ListaDinamica {
         if (vazia()) {
             System.out.println("ERRO: Lista vazia!");
         } else {
-            Celula elemento1 = buscar(item1);
-            Celula elemento2 = buscar(item2);
-            if ((elemento1 != null) && (elemento2 != null)) {
+            if ((buscar(item1) != null) && (buscar(item2) != null)) {
                 Celula x = inicio;
                 while(x != null) {
                     if(x.item == item1) {
                         x.item = item2;
-                        elemento2.item = item1;
+                    } else if (x.item == item2) {
+                    	x.item = item1;
                     }
                     x = x.link;
                 }
@@ -218,4 +223,18 @@ public class ListaDinamica {
         }
     }
 	
+//	public Celula consultar(Object item) {
+//		Celula atual = inicio; 	
+//		if(vazia())
+//			return (atual == null);
+//		else
+//		while (atual != null) {
+//			if (atual.item.equals(item)) {
+//				return atual;
+//			}
+//			atual = atual.link;
+//		}
+//		return atual;
+//		
+//	}
 }
